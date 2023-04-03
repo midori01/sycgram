@@ -47,7 +47,7 @@ class Speedtester:
             logger.error(e)
             return f"⚠️ Speedtest Error\n```{res.get('error')}```", ''
         else:
-            text = "**🕸 渔慕鱼-Speedtest-测速结果**\n" \
+            text = "**Speedtest**\n" \
                 f"测速点: {self.get_server()}\n" \
                 f"服务商: {self.get_sponsor()}\n" \
                 f"上传速度: {self.get_speed('upload')}\n" \
