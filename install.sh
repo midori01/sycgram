@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
 
-CONTAINER_NAME="ymsycgrambot"
-GITHUB_IMAGE_NAME="ymxkiss/${CONTAINER_NAME}"
+CONTAINER_NAME="sycgram"
+GITHUB_IMAGE_NAME="midori01/${CONTAINER_NAME}"
 GITHUB_IMAGE_PATH="ghcr.io/${GITHUB_IMAGE_NAME}"
 #PROJECT_PATH="/opt/${CONTAINER_NAME}"
 PROJECT_VERSION="v2.1.1"
@@ -47,7 +47,7 @@ pre_check() {
 delete_old_image_and_container(){
     # 获取最新指令说明
     # 远程file
-    remote_file="https://raw.githubusercontent.com/ymxkiss/ymsycgrambot/main/data/command.yml"
+    remote_file="https://raw.githubusercontent.com/midori01/sycgram/main/data/command.yml"
     # 本地file
     local_cmd_file="${PROJECT_PATH}/data/command.yml"
     if [[ -f ${local_cmd_file} ]]; then
@@ -87,18 +87,18 @@ fi
 stop_sycgram(){
     res=$(docker stop $(docker ps -a | grep ${GITHUB_IMAGE_NAME} | awk '{print $1}'))
     if [[ $res ]];then
-        echo -e "${yellow}已停止ymsycgrambot...${plain}"
+        echo -e "${yellow}已停止sycgram...${plain}"
     else
-        echo -e "${red}无法停止ymsycgrambot...${plain}"
+        echo -e "${red}无法停止sycgram...${plain}"
     fi
 }
 
 restart_sycgram(){
     res=$(docker restart $(docker ps -a | grep ${GITHUB_IMAGE_NAME} | awk '{print $1}'))
     if [[ $res ]];then
-        echo -e "${yellow}已重启ymsycgrambot...${plain}"
+        echo -e "${yellow}已重启sycgram...${plain}"
     else
-        echo -e "${red}无法重启ymsycgrambot...${plain}"
+        echo -e "${red}无法重启sycgram...${plain}"
     fi
 }
 
@@ -118,7 +118,7 @@ reinstall_sycgram(){
 
 install_sycgram(){
 
-    printf "请输入 sycgrambot 容器的名称："
+    printf "请输入 sycgram 容器的名称："
     read -r container_name <&1
     
     PROJECT_PATH="/opt/${container_name}"
@@ -133,10 +133,10 @@ install_sycgram(){
     echo -e "${yellow}正在启动容器...${plain}"
     docker run $1 \
     --name ${container_name} \
-    --env TZ="Asia/Shanghai" \
+    --env TZ="Asia/Tokyo" \
     --restart always \
     --hostname ${container_name} \
-    -v ${PROJECT_PATH}/data:/ymsycgrambot/data \
+    -v ${PROJECT_PATH}/data:/sycgram/data \
     ${GITHUB_IMAGE_PATH}:latest
 }
 
