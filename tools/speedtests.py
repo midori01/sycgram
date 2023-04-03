@@ -108,7 +108,7 @@ class Speedtester:
         return f"`{convert(self.__output.get(opt).get('bandwidth')*8)}`"
 
     def get_ping(self, opt: str) -> str:
-        return f"`{self.__output.get('ping').get(opt):.3f}`"
+        return f"`{self.__output.get('ping').get(opt):.3f} ms`"
 
     def get_time(self) -> str:
         return f"`{datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')}`"
