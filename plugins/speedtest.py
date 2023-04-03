@@ -61,4 +61,4 @@ async def speedtest(_: Client, msg: Message):
     except Exception as e:
         await show_exception(msg, e)
     # delete cmd history
-    await delete_this(msg)
+    # await delete_this(msg)
