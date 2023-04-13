@@ -9,7 +9,7 @@
 ```shell
 bash <(curl -fsL "https://raw.githubusercontent.com/midori01/sycgram/main/install.sh")
 ```
-完成后使用`Ctrl+P``Ctrl+Q`挂到后台运行
+完成后使用`Ctrl+P`、`Ctrl+Q`挂到后台运行
 
 
 ## 指令说明
