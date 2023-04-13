@@ -4,18 +4,12 @@
 - 如果没有，点击这个[电报链接](https://my.telegram.org/apps)申请
 
 
-## 安装与更新
+## 安装
 
 ```shell
-# 脚本的【安装】都是前台运行，完成安装后如无报错可先后使用Ctrl+P、Ctrl+Q挂到后台运行
 bash <(curl -fsL "https://raw.githubusercontent.com/midori01/sycgram/main/install.sh")
 ```
-
-## 更新存在的问题
-
-> 指令更新是通过拉取一次`watchower`来更新。
-
-watchower存在的问题：有一定的概率拉取最新镜像后移除容器后没法再次创建容器，sycgram就会失联。
+完成后使用`Ctrl+P``Ctrl+Q`挂到后台运行
 
 
 ## 指令说明
@@ -32,7 +26,7 @@ watchower存在的问题：有一定的概率拉取最新镜像后移除容器�
 
 ## 自定义指令前缀及指令别名
 
-- 脚本更新：都会覆盖本地的`command.yml`，原文件会备份到`command目录`。
+- 脚本更新：都会覆盖本地的`command.yml`，原文件会备份到`command`目录。
 - 指令更新：本地的`command.yml`不会被覆盖
 - 可以通过指令修改前缀和别名
 - 指令别名只支持单别名和源名（不再支持多别名）
